@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from ai.gemini import Gemini
 from dotenv import load_dotenv
 from prometheus_fastapi_instrumentator import Instrumentator
+
+
 load_dotenv()
 
 app = FastAPI()
