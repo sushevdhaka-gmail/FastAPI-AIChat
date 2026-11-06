@@ -3,9 +3,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from ai.gemini import Gemini
 from dotenv import load_dotenv
+from prometheus_fastapi_instrumentator import Instrumentator
 load_dotenv()
 
 app = FastAPI()
+
+Instrumentator().instrument(app).expose(app)
 
 def load_system_prompt():
       with open("ai/prompts/system_prompt.md","r") as f:
