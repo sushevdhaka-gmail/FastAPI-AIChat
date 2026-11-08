@@ -13,6 +13,8 @@ app = FastAPI()
 
 Instrumentator().instrument(app).expose(app)
 
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s [%(levelname)s] %(message)s")
+
 log_dir = Path(__file__).resolve().parent / "logs"
 log_dir.mkdir(exist_ok=True)
   
@@ -60,6 +62,7 @@ class ChatResponse(BaseModel):
 # api endpoints-
 @app.get('/')
 def root():
+         logging.debug("Root endpoint hit")
          return "API is running"
 
 @app.post('/chat', response_model=ChatResponse)
