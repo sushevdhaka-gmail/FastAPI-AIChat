@@ -1,0 +1,6 @@
+fastapi
+httpx
+python-dotenv
+prometheus-fastapi-instrumentator
+google-genai
+pytest
