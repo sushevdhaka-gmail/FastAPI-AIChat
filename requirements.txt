@@ -4,3 +4,4 @@ python-dotenv
 prometheus-fastapi-instrumentator
 google-genai
 pytest
+uvicorn
